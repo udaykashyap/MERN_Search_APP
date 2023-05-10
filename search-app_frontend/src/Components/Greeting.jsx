@@ -11,7 +11,7 @@ const Greeting = () => {
   useEffect(() => {
     setTimeout(() => {
       setFlag(true);
-    }, [5000]);
+    }, [1000]);
   }, []);
 
   //  if flag is false the loader with welcome note show after 5 second it moved to the home page
