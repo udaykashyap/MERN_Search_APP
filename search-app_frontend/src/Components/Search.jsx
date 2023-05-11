@@ -20,7 +20,8 @@ const Search = () => {
   const getData = async (search = "") => {
     try {
       setLoading(true);
-      let ress = await fetch(`http://localhost:8080/user/?q=${search}`);
+      let ress = await fetch(`
+      https://sleepy-yak-spacesuit.cyclic.app/user/?q=${search}`);
       let data = await ress.json();
       console.log(data);
       setGigs(data);

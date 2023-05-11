@@ -17,13 +17,16 @@ const AdminPage = () => {
     let payload = { img, companies, headline, url, description, primaryText };
 
     try {
-      let res = await fetch(`http://localhost:8080/admin/addgigs`, {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
+      let res = await fetch(
+        `https://sleepy-yak-spacesuit.cyclic.app/admin/addgigs`,
+        {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-type": "application/json",
+          },
+        }
+      );
       console.log(res);
 
       //This is toast which show success of adding gigs.
