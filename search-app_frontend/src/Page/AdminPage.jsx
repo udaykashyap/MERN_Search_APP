@@ -17,26 +17,39 @@ const AdminPage = () => {
     let payload = { img, companies, headline, url, description, primaryText };
 
     try {
-      let res = await fetch(
-        `https://sleepy-yak-spacesuit.cyclic.app/admin/addgigs`,
-        {
-          method: "POST",
-          body: JSON.stringify(payload),
-          headers: {
-            "Content-type": "application/json",
-          },
-        }
-      );
-      console.log(res);
-
-      //This is toast which show success of adding gigs.
-      toast({
-        title: "Gig Added.",
-        description: "We've added your gig for you.",
-        status: "success",
-        duration: 3000,
-        isClosable: true,
-      });
+      if (
+        payload.img !== "" &&
+        payload.companies !== "" &&
+        payload.headline !== ""
+      ) {
+        let res = await fetch(
+          `https://sleepy-yak-spacesuit.cyclic.app/admin/addgigs`,
+          {
+            method: "POST",
+            body: JSON.stringify(payload),
+            headers: {
+              "Content-type": "application/json",
+            },
+          }
+        );
+        console.log(res);
+        //This is toast which show success of adding gigs.
+        toast({
+          title: "Gig Added.",
+          description: "We've added your gig for you.",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: "Incomplete Data.",
+          description: "We are unable to add your gig for you.",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
 
       //After submiting payload here we clear the all input field.
       setImg("");
