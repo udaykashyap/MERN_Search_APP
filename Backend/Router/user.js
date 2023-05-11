@@ -4,6 +4,9 @@ const GigsModel = require("../Model/model");
 const userRouter = express.Router();
 
 userRouter.get("/", async (req, res) => {
+
+  //On the place of aggregate, and unwind functions, I used regular expression and in this condition if the user find according to the company name or primarText, or description or headline it will give the result according to the query.  documentation link :- https://www.mongodb.com/docs/manual/reference/operator/query/regex/
+
   const serq = req.query.q;
   try {
     
