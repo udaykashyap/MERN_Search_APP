@@ -1,11 +1,12 @@
 
 import './App.css';
-import Greeting from './Components/Greeting';
+import Router from './Components/Router';
 
 function App() {
   return (
     <div className="App">
-      <Greeting />
+      {/* <Greeting /> */}
+      <Router />
     </div>
   );
 }

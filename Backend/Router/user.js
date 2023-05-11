@@ -6,6 +6,7 @@ const userRouter = express.Router();
 userRouter.get("/", async (req, res) => {
   const serq = req.query.q;
   try {
+    
     let data = await GigsModel.find({
       $or: [
         { companies: { $regex: serq, $options: "i" } },

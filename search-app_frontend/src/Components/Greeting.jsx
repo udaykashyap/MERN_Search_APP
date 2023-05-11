@@ -18,6 +18,7 @@ const Greeting = () => {
   return flag === false ? (
     <Box w="100vw" bgColor={"#16181e"} h="100vh" display={"block"}>
       <Text className="text">Welcome To The Search Space</Text>
+      {/* //loading socket */}
       <Box className="socket">
         <div className="gel center-gel">
           <div className="hex-brick h1"></div>
@@ -209,6 +210,8 @@ const Greeting = () => {
       </Box>
     </Box>
   ) : (
+
+    //after showing welcome page its moved to the home page automatically
     <Search />
   );
 };
